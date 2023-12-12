@@ -1,4 +1,4 @@
-# Suicide_Detection_Project_Using_ML_with_OneAPI
+# Suicide_Detection_Project_Using_ML
 <img src="https://static.vecteezy.com/system/resources/previews/022/148/383/original/label-with-rope-noose-in-a-stop-sign-text-stop-suicide-ask-for-help-concept-of-suicide-prevention-help-with-depression-saving-mental-health-design-for-poster-banner-sticker-etc-vector.jpg" width="400" height="400">
 
 
