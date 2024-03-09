@@ -84,7 +84,7 @@ app.get('/analyse', (req, res) => {
             var percen = entry.suicide_count / total_post
             if (percen >= 0.50) {
                 names.push({
-                    authorid: entry.authorid,
+                    author_id: entry.author_id,
                     percentage: percen
                 });
             };

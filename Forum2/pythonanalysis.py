@@ -30,7 +30,7 @@ def predict(text,model,tokenizer):
 
 def main():
     warnings.filterwarnings("ignore")
-    model = pickle.load(open('model2.pkl', 'rb'))
+    model = pickle.load(open('model.pkl', 'rb'))
     m_jlib = joblib.load('model_jlib') 
     tokenizer_d = joblib.load('tokenizer.pkl')
     # load model

@@ -49,7 +49,7 @@
 
                     </blockquote>
                     <blockquote id="thread-author" class="comment"></blockquote>
-                    <%= thread.authorid %>
+                    <%= thread.author_id %>
                         </blockquote>
                         <!-- Begin comments-->
                 </div>
@@ -125,10 +125,10 @@
                             // You can do further processing or display the data on your webpage
                             // Example: Display an alert box for each entry
                             for (const entry of data) {
-                                const authorId = entry.authorid;
+                                const author_id = entry.author_id;
                                 const percentage = entry.percentage;
 
-                                const message = `Username: ${authorId}, Percentage: ${percentage * 100}%`;
+                                const message = `Username: ${author_id}, Percentage: ${percentage * 100}%`;
                                 alert(message);
                             }
 

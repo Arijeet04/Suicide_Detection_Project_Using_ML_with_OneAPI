@@ -4,7 +4,7 @@ const mysql = require('mysql')
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'Password@123',
+    password: 'arijeet',
     database: 'test'
 });
 
@@ -45,7 +45,7 @@ function login(username, password, fun) {
 function insertpost(username, comment, sentiment) {
     let insertQuery = "INSERT INTO ?? (??,??,??) VALUES (?,?,?)"
     console.log(sentiment)
-    let query = mysql.format(insertQuery, ['post', 'authorid', 'post', 'sentiment', username, comment, sentiment]);
+    let query = mysql.format(insertQuery, ['post', 'author_id', 'post', 'sentiment', username, comment, sentiment]);
     connection.query(query, (err, response) => {
         if (err) {
             console.error(err);
@@ -55,7 +55,7 @@ function insertpost(username, comment, sentiment) {
 }
 
 function getpost(fun) {
-    let selectQuery = "select authorid, post, posted_at from post"
+    let selectQuery = "select author_id, post, posted_at from post"
     connection.query(selectQuery, (err, response) => {
         if (err) {
             console.error(err)
@@ -68,7 +68,7 @@ function getpost(fun) {
 
 //query over all the users and get their suicide vs non-sucide post of last 5 days
 function getLastFiveData(fun) {
-    let query = "SELECT authorid,SUM(CASE WHEN sentiment = 'suicide' THEN 1 ELSE 0 END) AS suicide_count, SUM(CASE WHEN sentiment IS NULL OR sentiment != 'suicide' THEN 1 ELSE 0 END) AS non_suicide_count FROM post WHERE posted_at >= NOW() - INTERVAL 5 DAY GROUP BY authorid"
+    let query = "SELECT author_id,SUM(CASE WHEN sentiment = 'suicide' THEN 1 ELSE 0 END) AS suicide_count, SUM(CASE WHEN sentiment IS NULL OR sentiment != 'suicide' THEN 1 ELSE 0 END) AS non_suicide_count FROM post WHERE posted_at >= NOW() - INTERVAL 5 DAY GROUP BY author_id"
     connection.query(query, (err, response) => {
         if (err) {
             console.error(err)
